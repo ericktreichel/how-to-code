@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="container mt-4">
+<p>Hello, World!</p>
+    <div>
+        <p>This is my first website created using Flask, in that way I could implement the pages using Python in the
+        back-end and HTML+CSS (plus Bootstrap) in the front-end. It isn't a fancy or visually pleasing webpage, but
+        working in this code I could apply and consolidate my knowledge in many topics and areas that I've studied in
+        the past couple of months.</p>
+        <p>I may come here again to improve some aspects of this code, perhaps adding new functionalities, or maybe
+        improving it with a 'cleanner' code; or maybe I will just skip to my next challenge.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum egestas metus,
+        vel molestie odio lacinia in. Donec hendrerit ex a justo sagittis finibus. In hac habitasse platea dictumst.
+        In nec laoreet velit, vitae dapibus eros. Nullam posuere eleifend justo sit amet aliquet.
+        Vestibulum sit amet imperdiet nulla, ac cursus tellus. Etiam arcu orci, sodales et risus quis, aliquet sapien.
+        Integer diam metus, auctor eget posuere eget, eleifend in dui. Maecenas at placerat velit.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+        <p>  Duis pharetra nisi ac rutrum commodo.
+        Pellentesque vulputate, mi nec pulvinar condimentum, magna ipsum bibendum felis, nec sodales est arcu ac tortor.
+        Sed at sollicitudin enim, eu tincidunt eros.
+        Morbi fermentum, eros nec tincidunt dapibus, libero purus rhoncus orci, in feugiat massa ex at massa.
+        Suspendisse suscipit sit amet erat ac suscipit. Nunc laoreet dui nisi, non rutrum magna dictum a.</p>
+    </div>
+</div>
+<br>
+
+{% for post in posts %}
+<div class="container mt-3 area-post">
+<div class="row border mt-4 p-3">
+    <div class="col-3 ">
+        <div class="pe-1">
+            <img src="{{ url_for('static', filename='profile_pictures/{}'.format(post.autor.profile_pic)) }}" class="image rounded ms-2" width="230" >
+            <h3 class="ms-3 mt-2">{{ post.autor.username }}</h3>
+            <div class="container mt-1 d-flex justify-content-left">
+                {% if post.autor.cursos != 'Não informado' %}
+                    {% for curso in post.autor.cursos.split(';') %}
+                        {% if post.autor.cursos != '' %}
+                            <button type="button" class="btn btn-success me-1 cursos-badges" disabled>{{ curso }}</button>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="col col-8">
+        <a class="link-post" href="{{ url_for('show_post', id_post=post.id_post) }}"><h3>{{ post.title }}</h3></a>
+        <p>{{ post.body }}</p>
+        <br>
+    </div>
+</div>
+</div>
+
+{% endfor %}
+<br><br>
+<img src="/static/bug.svg " class='bug svg lamp' title="Well done! One bug found and counting..." alt="code_logo">
+
+{% endblock %}

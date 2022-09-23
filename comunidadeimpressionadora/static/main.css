@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC&family=Bree+Serif&family=Fira+Sans+Condensed:wght@200&family=Press+Start+2P&family=Russo+One&family=Secular+One&display=swap");
+
+
+body{
+    background-color:#e3e9ed;
+    border-radius: 10px;
+    min-height: 98vh;
+}
+
+.area-post{
+    border-radius: 10px;
+    background-color:rgba(105,105,114,0.12);
+}
+
+.link-post{
+    text-decoration: None;
+    color: black;
+}
+
+
+footer{
+    padding-bottom: 0px;
+    padding-top: 2px;
+    background: rgba(20,102,155,0.2);
+    background: rgba(25,32,36,0.75);
+    height: 26px;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    color: #bbb;
+}
+
+.bug{
+    width: 45px;
+    position: relative;
+    bottom: 32px;
+}
+
+.foto{
+    max-width: 200px;
+}
+
+.card{
+    width: 600px;
+    border: dotted 1px rgba(20,102,155,0.80);
+    border-radius: 10px;
+    margin: 20px;
+    background-color: rgba(105,105,114,0.11)
+}
+
+.card-users{
+    width: 500px;
+    border: dotted 1px rgba(20,102,155,0.82);
+    border-radius: 10px;
+    margin: 20px;
+    background-color: rgba(105,105,114,0.15);
+
+}
+
+
+.stats{
+    /*background-color: rgba(20,102,155,0.32) !important;*/
+    background-color: rgba(160,222,85,0.1) !important;
+    color: #111 !important;
+    border: dotted 1px rgba(130,180,65,1);
+}
+.cursos{
+    font-weight: 600;
+    font-size:14px;
+    color: #111;
+}
+.ncursos{
+  font-weight:600;
+  margin-left: 4px;
+  color: #111;
+}
+
+.posts{
+    font-weight: 600;
+    font-size:14px;
+    color: #111;
+}
+
+.nposts{
+  font-weight:600;
+  color: #111;
+  text-align: right;
+  margin-right: 5px;
+}
+
+.form-edit{
+    width: 50%;
+    place-content: center;
+    background: #f2f5f8;
+}
+
+.row{
+    border: dotted 1px #ddd;;
+
+}
+
+
+.form-control{
+    background-color: #fdfdfb;
+
+}
+
+.slogan{
+    display: block;
+    width: 600px;
+    border: solid 1px;
+    text-align: right;
+    align-content: right;
+    justify-content: right;
+    place-content: end;
+    place-items: end;
+    justify-self: end;
+    place-self: end;
+}
+
+.title-main{
+    font-size: 22px;
+    font-family: "Press Start 2P", Arial, Helvetica, sans-serif;
+    color: #FF5D40;
+
+}
+
+.img-code{
+    width: 46%;
+}
+
+
+.cursos-badges{
+    border: solid 1px black;
+    font-size: 12px;
+    text-align: left;
+    align-content: start;
+    justify-content: start;
+    place-content: start;
+    place-items: start;
+    align-items: start;
+    justify-items: start;
+    justify-self: start;
+    place-self: start;
+    align-self: start;
+}
+
+
+
+/* Grid */
+.grid {
+	display: grid;
+	border: dotted 0px; /*TODO remove later */
+}
+
+.frase {
+	grid-area: footer;
+	font-family: "Press Start 2P", Arial, Helvetica, sans-serif;
+	font-weight: lighter;
+	font-size: 15px;
+	text-align: left;
+}
+
+.advert {
+	grid-area: advert;
+	text-align: center;
+}
+
+.grid-template-areas-1 {
+	grid-template-areas:
+		"logo nav advert"
+		"sidenav content advert"
+		"footer footer footer"
+		;
+}
+
+.navbar{
+    color: red;
+}
+
+.lamp:hover {
+  animation: lightsOn 1s infinite alternate;
+}
+
+@keyframes lightsOn {
+  from {
+    opacity: 0.2;
+  }  to {
+    opacity: 1;
+  }
+}
+
+
+
+.col-edi{
+
+    border: dotted 0px;
+    min-width: 600px;
+    width: 69% !important;
+    justify-items: center !important;
+    place-items: center !important;
+    justify-content: center !important;
+    margin: auto;
+
+}
+
+.container-colap{
+    display: inline;
+    justify-items: center;
+    place-items: center;
+    justify-content: center;
+    border: dashed 3px red;
+
+}
+
+.form-edit-post{
+    width: 80%;
+
+}
