@@ -10,20 +10,19 @@
                     <a class="nav-link" href="{{url_for('usuarios')}}">Users</a>
                 </li>
                 <li class="nav-item">
-                    <li><a class="nav-link" href="#">About</a></li>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{url_for('contato')}}">Contact</a>
+                    <a class="nav-link" href="{{url_for('contato')}}">Contact us</a>
                 </li>
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        More...
+                        More
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item " href="#">Careers</a></li>
+                        <li><a class="dropdown-item " href="{{ url_for('joinus')}}">Join our team</a></li>
+                        <li class="nav-item">
+                    <li><a class="dropdown-item" href="{{ url_for('about') }}">About</a></li></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">IR — Investor Relations</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('investors') }}">IR — Investor Relations</a></li>
                     </ul>
                 </li>
                 <!--

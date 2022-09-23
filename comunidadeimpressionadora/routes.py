@@ -18,6 +18,18 @@ def home():
 def contato():
     return render_template('contato.html')
 
+@app.route("/about")
+def about():
+    return render_template('about.html')
+
+@app.route("/joinus")
+def joinus():
+    return render_template('joinus.html')
+
+@app.route("/investors")
+def investors():
+    return render_template('investors.html')
+
 
 @app.route('/usuarios')
 @login_required

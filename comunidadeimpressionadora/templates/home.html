@@ -27,12 +27,13 @@
 </div>
 <br>
 
+
 {% for post in posts %}
 <div class="container mt-3 area-post">
 <div class="row border mt-4 p-3">
     <div class="col-3 ">
         <div class="pe-1">
-            <img src="{{ url_for('static', filename='profile_pictures/{}'.format(post.autor.profile_pic)) }}" class="image rounded ms-2" width="230" >
+            <img src="{{ url_for('static', filename='profile_pictures/{}'.format(post.autor.profile_pic)) }}" class="image foto rounded ms-2" width="230" >
             <h3 class="ms-3 mt-2">{{ post.autor.username }}</h3>
             <div class="container mt-1 d-flex justify-content-left">
                 {% if post.autor.cursos != 'Não informado' %}
@@ -55,6 +56,6 @@
 
 {% endfor %}
 <br><br>
-<img src="/static/bug.svg " class='bug svg lamp' title="Well done! One bug found and counting..." alt="code_logo">
+<img src="/static/bug.svg " class='bug svg lamp' title="Well done! One bug found and counting..." data-bs-toggle="popover" alt="code_logo">
 
 {% endblock %}
