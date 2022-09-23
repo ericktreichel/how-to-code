@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="container mt-3 area-post">
+<div class="row border mt-4 p-3">
+    <div class="col-3 ">
+        <div class="image pe-1">
+            <img src="{{ url_for('static', filename='profile_pictures/{}'.format(post.autor.profile_pic)) }}" class="rounded ms-2" width="220" >
+            <h3 class="ms-3 mt-2">{{ post.autor.username }}</h3>
+            <div class="container mt-1 d-flex justify-content-left">
+                {% if post.autor.cursos != 'Não informado' %}
+                    {% for curso in post.autor.cursos.split(';') %}
+                        {% if post.autor.cursos != '' %}
+                            <button type="button" class="btn btn-success me-1 cursos-badges" disabled>{{ curso }}</button>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="col col-8">
+        <h3>{{ post.title }}</h3><small class="text-muted">{{ post.pub_date.strftime('%d/%m/%Y, %H:%M:%S') }}</small>
+        <p>{{ post.body }}</p>
+    </div>
+</div>
+</div>
+<br>
+
+{% if current_user == post.autor %}
+<p class="container">
+  <a class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#delete_post" href="#" role="button" >
+    Remove post
+</a>
+<button class="btn btn-sm btn-secondary"  data-bs-toggle="collapse" data-bs-target="#collapseExample">Edit post</button></p>
+<div class="collapse container-colap" id="collapseExample">
+    <div class="card card-body col-edi">
+
+<div class="container form-edit form-edit-post">
+    <div class="row">
+            <form method='POST' action="" id="form-edit" class="p-4 mt-1">
+                {{ form_edit_post.csrf_token }}
+                <fieldset>
+                    <legend>Edit post</legend>
+                    <div class="form-group">
+                        {{ form_edit_post.title.label(class="form-label mt-3") }}
+                        {% if form_edit_post.title.errors and 'submit_login_button' in request.form %}
+                            {{ form_edit_post.title(class='form-control is-invalid') }}
+                        <div class="invalid-feedback">
+                            {% for erro in form_edit_post.title.errors %}
+                                {{ erro }}
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                            {{ form_edit_post.title(class='form-control') }}
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ form_edit_post.body.label(class="form-label mt-3") }}
+                        {% if form_edit_post.body.errors and 'submit_login_button' in request.form %}
+                            {{ form_edit_post.body(class='form-control is-invalid') }}
+                        <div class="invalid-feedback">
+                            {% for erro in form_edit_post.body.errors %}
+                                {{ erro }}
+                            {% endfor %}
+                        </div >
+                        {% else %}
+                            {{ form_edit_post.body(class='form-control') }}
+                        {% endif %}
+                    </div>
+
+
+                </fieldset>
+                {{ form_edit_post.save_edits_button(class='btn btn-primary mt-3') }}
+                <a href="{{ url_for('show_post', id_post=post.id_post) }}" class='btn btn-secondary ms-2 mt-3 me-5'>Cancel</a>
+            </form>
+        </div>
+</div>
+            </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="delete_post" tabindex="-1" aria-labelledby="delete_postLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="delete_postLabel"><strong>Remove post?</strong></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to remove this post?<br> This action cannot be undone.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <form method="Post" action="{{ url_for('remove_post', id_post=post.id_post) }}"><button type="submit" class="btn btn-danger">Delete</button></form>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+
+
+
+{% endif %}
+<br><br>
+<br><br>
+
+
+
+<!-- Button trigger modal
+<button type="button" action="{{ url_for('remove_post', id_post=post.id_post) }}" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#delete_post">
+  deletaoooo
+</button>
+-->
+
+
+
+
+<br><br>
+{% endblock %}

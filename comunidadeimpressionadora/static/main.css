@@ -1,0 +1,333 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC&family=Bree+Serif&family=Fira+Sans+Condensed:wght@200&family=Press+Start+2P&family=Russo+One&family=Secular+One&display=swap");
+
+
+body{
+    background-color:#e3e9ed;
+    border-radius: 10px;
+    min-height: 98vh;
+}
+
+.area-post{
+    border-radius: 10px;
+    border: solid 1px rgba(105,105,114,0.13);
+    background-color:rgba(105,105,114,0.10);
+}
+
+.link-post{
+    text-decoration: None;
+    color: black;
+}
+
+
+footer{
+    padding-bottom: 0px;
+    padding-top: 2px;
+    background: rgba(20,102,155,0.2);
+    background: rgba(25,32,36,0.75);
+    height: 26px;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    color: #bbb;
+}
+
+.bug{
+    width: 45px;
+    position: relative;
+    bottom: 32px;
+}
+
+.foto{
+    width: 220px;
+    height: 240px;
+    object-fit: cover;
+}
+
+
+.card{
+    width: 600px;
+    border: dotted 1px rgba(20,102,155,0.80);
+    border-radius: 10px;
+    margin: 20px;
+    background-color: rgba(105,105,114,0.1);
+
+}
+
+.card-users{
+    width: 500px;
+    border: dotted 1px rgba(20,102,155,0.82);
+    border-radius: 10px;
+    margin: 20px;
+    background-color: rgba(105,105,114,0.15);
+    background-color: rgba(105,105,114,0.1);
+}
+
+
+.stats{
+    /*background-color: rgba(20,102,155,0.32) !important;*/
+    background-color: rgba(160,222,85,0.1) !important;
+    color: #111 !important;
+    border: dotted 1px rgba(130,180,65,1);
+}
+.cursos{
+    font-weight: 600;
+    font-size:14px;
+    color: #111;
+}
+.ncursos{
+  font-weight:600;
+  margin-left: 4px;
+  color: #111;
+}
+
+.posts{
+    font-weight: 600;
+    font-size:14px;
+    color: #111;
+}
+
+.nposts{
+  font-weight:600;
+  color: #111;
+  text-align: right;
+  margin-right: 5px;
+}
+
+.form-edit{
+    width: 50%;
+    place-content: center;
+    background: #f2f5f8;
+    border-radius: 5px;
+
+}
+/*
+.row{
+    border: dotted 1px #ddd;;
+}
+*/
+
+.form-control{
+    background-color: #fdfdfb;
+
+}
+
+.slogan{
+    display: block;
+    width: 600px;
+    border: solid 1px;
+    text-align: right;
+    align-content: right;
+    justify-content: right;
+    place-content: end;
+    place-items: end;
+    justify-self: end;
+    place-self: end;
+}
+
+.title-main{
+    font-size: 22px;
+    font-family: "Press Start 2P", Arial, Helvetica, sans-serif;
+    color: #FF5D40;
+
+}
+
+.img-code{
+    width: 46%;
+}
+
+
+.cursos-badges{
+    border: solid 1px black;
+    font-size: 12px;
+    text-align: left;
+    align-content: start;
+    justify-content: start;
+    place-content: start;
+    place-items: start;
+    align-items: start;
+    justify-items: start;
+    justify-self: start;
+    place-self: start;
+    align-self: start;
+}
+
+
+
+/* Grid */
+.grid {
+	display: grid;
+	border: dotted 0px; /*TODO remove later */
+}
+
+.frase {
+	grid-area: footer;
+	font-family: "Press Start 2P", Arial, Helvetica, sans-serif;
+	font-weight: lighter;
+	font-size: 15px;
+	text-align: left;
+}
+
+.advert {
+	grid-area: advert;
+	text-align: center;
+}
+
+.grid-template-areas-1 {
+	grid-template-areas:
+		"logo nav advert"
+		"sidenav content advert"
+		"footer footer footer"
+		;
+}
+
+.navbar{
+    color: red;
+}
+
+.lamp:hover {
+  animation: lightsOn 1s infinite alternate;
+}
+
+@keyframes lightsOn {
+  from {
+    opacity: 0.2;
+  }  to {
+    opacity: 1;
+  }
+}
+
+
+
+.col-edi{
+
+    border: dotted 0px;
+    min-width: 600px;
+    width: 69% !important;
+    justify-items: center !important;
+    place-items: center !important;
+    justify-content: center !important;
+    margin: auto;
+
+}
+
+.container-colap{
+    display: inline;
+    justify-items: center;
+    place-items: center;
+    justify-content: center;
+    border: dashed 3px red;
+
+}
+
+.form-edit-post{
+    width: 80%;
+
+}
+
+
+/* recycled from other project: */
+
+.containerdio {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 0;
+  margin-top: 1rem;
+}
+
+.card-containerdio {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 90%;
+  margin: 15px 0;
+
+}
+
+.carddio {
+  height: 300px;
+  width: 400px;
+  margin: 3rem 0 0;
+  background-image: url(/static/bgcard.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: grayscale(0.5);
+  color: whitesmoke;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card-textdio {
+  width: 55%;
+  margin: 2rem 0;
+  font-family: arial;
+  letter-spacing: 1px;
+  color: rgb(80, 80, 80);
+  text-indent: 2rem;
+  text-align: justify;
+}
+
+.card-wrapperdio {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.card-wrapperdio::before {
+  content: "";
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  display: block;
+  border: 1px solid whitesmoke;
+  /* align-items: center;
+  justify-content: center; */
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.card-wrapperdio h2 {
+    font-family: Russo One;
+    font-size: 42px;
+    letter-spacing: 4px;
+    margin: 0;
+    transition: 0.3s;
+}
+
+.card-wrapperdio p {
+  font-size: 0;
+  visibility: hidden;
+  opacity: 0;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+.carddio:hover {
+  filter: unset;
+}
+
+.carddio:hover > .card-wrapperdio::before {
+  opacity: 1;
+  width: 350px;
+  height: 250px;
+}
+
+.carddio:hover > .card-wrapperdio p {
+  margin-top: 12px;
+  font-size: 14px;
+  font-family: Russo One;
+  opacity: 1;
+  visibility: visible;
+}
